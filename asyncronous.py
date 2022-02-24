@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 import asyncio
 from typing import Protocol, Any, Awaitable
 from enum import Enum, auto
