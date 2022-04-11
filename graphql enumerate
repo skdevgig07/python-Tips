@@ -2,7 +2,10 @@
  
  Curl
  
- ```
+```
  --data-raw $'{"query":"{__schema{types{name,fields{name}}}}"}}' 
- ```
- 
+```
+
+```
+--data-raw $'{"query":"{__schema{types{name,fields{name, args{name,description,type{name, kind, ofType{name, kind}}}}}}}"}}'
+```
