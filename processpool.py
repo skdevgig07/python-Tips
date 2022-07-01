@@ -3,36 +3,33 @@ import time
 import random
 
 # ACTION#1
-def soma(a, b, interno):
-    if (a, b) in interno:
-        print('ret')
-        return interno[(a, b)]
+def soma(a, b):
     return a + b
 
 # ACTION#2
-def subtrai(a, b, interno):
-    if (a, b) in interno:
-        print('ret')
-        return interno[(a, b)]
+def subtracao(a, b):
     return a - b
 
-start = time.time()
-
 # ACTOR
-with ThreadPoolExecutor(max_workers=8) as executor:
+class Mathematician:
+    def __init__(self, msg = None):
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            actions = (':soma', ':subtracao')
 
-    b_soma = { }
-    b_subtracao = { }
+            b_soma = { }
 
-    future = { }
+            future = { }
+            for _ in range(1000):
+                r = random.choice(range(20,30))
+                s = random.choice(range(20,100))
+                future.update({(':soma', r, s): executor.submit(soma, r, s, b_soma)})
 
-    for _ in range(1000):
-        r = random.choice(range(100))
-        s = random.choice(range(100))
-        future.update({(':soma', r, s): executor.submit(soma, r, s, b_soma)})
+            [print(f'{k} => {v.result()}') for k, v in future.items()]
+            print(len(b_soma))
+                # future = executor.map(teste, range(35))
 
-    [print(f'{k} => {v.result()}') for k, v in future.items()]
-        # future = executor.map(teste, range(35))
 
+start = time.time()
+Mathematician()
 end = time.time()
 print(end - start)
