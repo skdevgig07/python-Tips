@@ -1,5 +1,5 @@
-drop table if exists public.forum22_ecommmerce;
-create table public.forum22_ecommmerce AS
+drop table if exists public.tabela;
+create table public.tabela AS
 select * from json_to_recordset(
 $$
 [
