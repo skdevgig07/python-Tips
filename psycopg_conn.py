@@ -28,3 +28,4 @@ DATABASE_CONNECTION = {
         retorno = cur.fetchall()
 		except psycopg2.Error as e:
 			raise ProcessorException(f'Erro de conexao ao banco e dados: {e}')
+# https://docs.rackspace.com/support/how-to/postgresql-creating-and-dropping-roles/
