@@ -8,3 +8,4 @@ The utils repository to Usefull resources of python language
 - https://github.com/pytransitions/transitions
 - https://github.com/dry-python
 - https://github.com/LiskHQ/lips/blob/main/proposals/lip-0039.md
+- [Explore Python](https://kandi.openweaver.com/explore/python) - Discover & find a curated list of popular & new libraries, top authors, trending project kits, discussions, tutorials & learning resources on kandi.
